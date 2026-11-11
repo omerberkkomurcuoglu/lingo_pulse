@@ -21,17 +21,31 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
-# debug
+# debug and logs
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+*.log
 
-# macOS
+# macOS & Windows
 .DS_Store
+Thumbs.db
 *.pem
 
-# local env files
-.env*.local
+# Environment variables & secrets (CRITICAL: Never commit .env with real API keys!)
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# Large binaries & tools
+*.exe
+cloudflared.exe
+
+# Lingo sunucu verileri (kullanıcılar, şifre hash'leri, veritabanı durum dosyaları)
+server-data/
+src/data/lingo_state.json
 
 # typescript
 *.tsbuildinfo
